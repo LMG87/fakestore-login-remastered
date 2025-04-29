@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="row">
+    <!-- Product Images -->
+    <div class="col-md-6 mb-4">
+      <img
+        [src]="product?.image"
+        alt="Product"
+        class="img-fluid rounded mb-3 product-image"
+        id="mainImage"
+      />
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-md-6">
+      <h2 class="mb-3">{{ product?.title }}</h2>
+      <div class="mb-3">
+        <span class="h4 me-2">{{ product?.price }}</span>
+      </div>
+      <div class="mb-3">
+        @for (star of createRange(rate); track star) {
+          <i class="bi bi-star-fill text-warning"></i>
+        }
+        @for (star of createRange(5 - rate); track star) {
+          <i class="bi bi-star text-warning"></i>
+        }
+        <span class="ms-2"
+          >{{ rate }} ({{ product?.rating?.count }} reviews)</span
+        >
+      </div>
+      <p class="mb-4">{{ product?.description }}</p>
+      <div class="mb-4">
+        <h5>Category: {{ product?.category }}</h5>
+      </div>
+      <button
+        class="btn btn-primary btn-lg mb-3 me-2"
+        (click)="addToCart(product!)"
+      >
+        <i class="bi bi-cart-plus"></i> Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
