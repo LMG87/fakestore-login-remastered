@@ -12,6 +12,6 @@ export class StorageService {
   }
 
   saveProducts(products: ProductItemCart[]): void {
-    localStorage.setItem('prodcuts', JSON.stringify(products));
+    localStorage.setItem('products', JSON.stringify(products));
   }
 }
