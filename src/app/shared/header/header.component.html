@@ -15,39 +15,39 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         @if (authService.login()) {
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a
               class="nav-link"
               href="javascript:void(0)"
               [routerLink]="['products']"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
-              >Products</a
+              ><i class="bi bi-bag"></i> Products</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a
               class="nav-link"
               href="javascript:void(0)"
               [routerLink]="['users']"
               routerLinkActive="active"
-              >Users</a
+              ><i class="bi bi-people"></i> Users</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a
-              class="nav-link"
+              class="btn btn-danger rounded-pill"
               href="javascript:void(0)"
               (click)="authService.logout()"
-              >Logout</a
+              ><i class="bi bi-box-arrow-right"></i> Logout</a
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a
-              class="btn btn-warning rounded-pill position-relative"
+              class="btn btn-info rounded-pill position-relative"
               href="javascript:void(0)"
               [routerLink]="['cart']"
-              routerLinkActive="active"
+              routerLinkActive="btn-warning"
               ><i class="bi bi-cart"></i>
               @if (carState.count() > 0) {
                 <span
@@ -60,13 +60,12 @@
             </a>
           </li>
         } @else {
-          <li class="nav-item">
+          <li class="nav-item me-2">
             <a
-              class="nav-link"
+              class="btn btn-success rounded-pill"
               href="javascript:void(0)"
               [routerLink]="['login']"
-              routerLinkActive="active"
-              >Login</a
+              ><i class="bi bi-box-arrow-in-left"></i> Login</a
             >
           </li>
         }
